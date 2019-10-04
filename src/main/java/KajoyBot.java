@@ -11,6 +11,6 @@ public class KajoyBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return null;
+        return "883396045:AAFnccy-vbkbg7dxuqzs7XkvhjYbqw78n4o";
     }
 }

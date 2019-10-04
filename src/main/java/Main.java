@@ -10,6 +10,6 @@ public class Main {
             telegramBotsApi.registerBot(new KajoyBot());
         } catch (TelegramApiException e) {
             e.printStackTrace();
-        }
-    }
-}
+        }//catch
+    }//main
+}//Main

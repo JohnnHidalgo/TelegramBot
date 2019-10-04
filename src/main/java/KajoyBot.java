@@ -12,14 +12,14 @@ public class KajoyBot extends TelegramLongPollingBot {
             execute(message);
         } catch (TelegramApiException e) {
 
-        }
-    }
+        }//catch
+    }//onUpdateReceived
 
     public String getBotUsername() {
         return "Kajoybot";
-    }
+    }//getBotUsername
 
     public String getBotToken() {
         return "883396045:AAFnccy-vbkbg7dxuqzs7XkvhjYbqw78n4o";
-    }
-}
+    }//getBotToken
+}//KajoyBot

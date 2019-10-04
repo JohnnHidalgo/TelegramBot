@@ -7,7 +7,7 @@ public class KajoyBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return null;
+        return "Kajoybot";
     }
 
     public String getBotToken() {

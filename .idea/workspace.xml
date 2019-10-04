@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a73423e4-c7a4-4dab-a569-b4c99a21a289" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KajoyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KajoyBot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570228056282</updated>
-      <workItem from="1570228060816" duration="1365000" />
+      <workItem from="1570228060816" duration="1762000" />
     </task>
     <servers />
   </component>

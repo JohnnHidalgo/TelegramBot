@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a73423e4-c7a4-4dab-a569-b4c99a21a289" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoKajoyBot.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KajoyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KajoyBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/KajoyBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KajoyBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570228056282</updated>
       <workItem from="1570228060816" duration="2004000" />
-      <workItem from="1570282373122" duration="975000" />
+      <workItem from="1570282373122" duration="23524000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,7 @@
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
@@ -24,12 +22,12 @@ public class KajoyBot extends TelegramLongPollingBot {
  //       final long chatId = update.getMessage().getChatId();
   //      SendMessage message = new SendMessage().setChatId(chatId).setText(messageTextReceived);
 
-
         try {
 
             if (update.hasMessage()) {
                 Message message = update.getMessage();
                 if (message.hasText() || message.hasLocation()) {
+                    long chat_id=update.getMessage().getChatId();
                     handleIncomingMessage(message, update);
                 }
             }
@@ -40,9 +38,9 @@ public class KajoyBot extends TelegramLongPollingBot {
         }//catch
     }//onUpdateReceived
 
-    private void handleIncomingMessage(Message message, Update update ) throws TelegramApiException {
+    private void handleIncomingMessage(Message message, Update update) throws TelegramApiException {
 
-        SendMessage sendMessageGreeting = new SendMessage().setChatId(update.getMessage().getChatId());
+        SendMessage sendMessageGreeting =   new SendMessage().setChatId(update.getMessage().getChatId());
         switch(message.getText()) {
             case "Hola":
                 System.out.println(message.getChat().getFirstName());
@@ -50,7 +48,26 @@ public class KajoyBot extends TelegramLongPollingBot {
                         "Que tal "+ message.getChat().getFirstName() +", mi nombre es Kajoy, sere tu acompañante para navegar por las grandes aventuras de la apliaciòn Kajoy, elege una de las opciones que aparecen a continuación ");
                 setButtons(sendMessageGreeting);
                 break;
-            case INGRESAR_CURSO:
+            case "/pregunta":
+                sendMessageGreeting = new SendMessage().setChatId(update.getMessage().getChatId()).setText("" +
+                        "Que tal "+ message.getChat().getFirstName() +", mi nombre es Kajoy, sere tu acompañante para navegar por las grandes aventuras de la apliaciòn Kajoy, elege una de las opciones que aparecen a continuación ");
+                sendMessageGreeting.setReplyMarkup(etMenu(sendMessageGreeting,update.getMessage().getChatId()));
+                SendMessage messageo=new SendMessage().setChatId(update.getMessage().getChatId()).setText("Menu");
+                sendMessageGreeting = new SendMessage().setChatId(update.getMessage().getChatId()).setReplyMarkup(etMenu(sendMessageGreeting,update.getMessage().getChatId()));
+                sendMessageGreeting.setText("¿Cuánto es dos mas dos?");
+
+/*
+                try {
+
+                    SendMessage sendMessage=new SendMessage().setChatId(chat_id).setText(messageTextReceived);
+                    sendMessageGreeting=new SendMessage().getChatId(update.getMessage().getChatId(
+
+                }
+                catch (TelegramApiException e){
+                    e.printStackTrace();
+                }
+*/
+
 //                sendMessageRequest = messageOnMainMenu(message);
 
                 break;
@@ -66,6 +83,53 @@ public class KajoyBot extends TelegramLongPollingBot {
         }
         execute(sendMessageGreeting);
     }
+
+    public ReplyKeyboardMarkup  etMenu(SendMessage message,long chat_id) throws TelegramApiException{
+
+        message=new SendMessage().setChatId(chat_id).setChatId("Opciones");
+
+        ReplyKeyboardMarkup keyboardMarkup= new ReplyKeyboardMarkup();
+        List<KeyboardRow> keyboard=new ArrayList<>();
+
+        KeyboardRow row= new KeyboardRow();
+
+        row.add("5");
+        row.add("3");
+        row.add("4");
+
+       keyboard.add(row);
+
+        row= new KeyboardRow();
+
+        row.add("8");
+        row.add("9");
+        row.add("10");
+
+        keyboard.add(row);
+
+        keyboardMarkup.setKeyboard(keyboard);
+        return keyboardMarkup;
+//        message.setReplyMarkup(keyboardMarkup);
+
+
+
+
+/*
+        try {
+            message.sendMessage(message);
+
+        }
+        catch (TelegramApiException e){
+            e.printStackTrace();
+        }
+
+*/
+
+
+
+
+    }
+
 
     public synchronized void setButtons(SendMessage sendMessage) {
 
